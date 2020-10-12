@@ -1,4 +1,7 @@
 # Leeloo LXP User Key Details Block
+This block is used to show Number of Keys user have in his account.
+
+Admin can create Key types in Leeloo, and if user has those keys in his account, it is shown by this block.
 
 Installation Instructions
 =========================
