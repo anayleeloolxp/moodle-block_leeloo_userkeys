@@ -110,6 +110,7 @@ class block_leeloo_userkeys extends block_base {
         $siteprefix = str_ireplace('.', '_', $siteprefix);
         $siteprefix = str_ireplace('/', '_', $siteprefix);
         $siteprefix = $siteprefix . '_pre_';
+        $siteprefix = '';
 
         $username = $USER->username;
         $leeloousername = $siteprefix . $username;
