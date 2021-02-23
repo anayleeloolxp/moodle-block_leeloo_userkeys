@@ -74,7 +74,9 @@ class block_leeloo_userkeys extends block_base {
         $leeloolxplicense = get_config('block_leeloo_userkeys')->license;
 
         $url = 'https://leeloolxp.com/api_moodle.php/?action=page_info';
-        $postdata = '&license_key=' . $leeloolxplicense;
+        $postdata = [
+            'license_key' => $leeloolxplicense,
+        ];
 
         $curl = new curl;
 
@@ -121,11 +123,15 @@ class block_leeloo_userkeys extends block_base {
         ];
 
         $url = $leelooapibaseurl . 'getuserkeys.php';
-        $postdata = '&license_key=' . $vendorkey . '&username=' . $leeloousername;
+        $postdata = [
+            'license_key' => $vendorkey,
+            'username' => $leeloousername,
+        ];
         $curl = new curl;
         $options = array(
             'CURLOPT_RETURNTRANSFER' => true,
-            'CURLOPT_POSTFIELDS' => $post,
+            'CURLOPT_HEADER' => false,
+            'CURLOPT_POST' => count($postdata),
         );
 
         if (!$output = $curl->post($url, $postdata, $options)) {
