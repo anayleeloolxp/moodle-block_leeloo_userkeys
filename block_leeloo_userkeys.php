@@ -65,8 +65,6 @@ class block_leeloo_userkeys extends block_base {
 
         require_once($CFG->libdir . '/filelib.php');
 
-        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/leeloo_userkeys/js/custom.js'));
-
         if ($this->content !== null) {
             return $this->content;
         }
