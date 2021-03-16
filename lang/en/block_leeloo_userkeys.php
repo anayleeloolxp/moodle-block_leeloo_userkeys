@@ -36,4 +36,4 @@ $string['nokeys'] = 'No Keys in your account.';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
 
-$string['privacy:metadata'] = 'The Leeloo LXP User Key Details (leeloo_userkeys) block only shows information about User Key Details and does not store data itself.';
+$string['privacy:metadata'] = 'The Leeloo LXP User Key Details (leeloo_userkeys) block only shows information and does not store data itself.';
