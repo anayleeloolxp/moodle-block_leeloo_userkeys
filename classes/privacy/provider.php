@@ -28,20 +28,32 @@ namespace block_leeloo_userkeys\privacy;
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Privacy Subsystem for block_leeloo_userkeys implementing null_provider.
+ * Provider implementation for block_leeloo_userkeys.
  *
  * @copyright  2020 Leeloo LXP (https://leeloolxp.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class provider implements \core_privacy\local\metadata\null_provider {
+class provider implements
+\core_privacy\local\metadata\provider,
+\core_privacy\local\request\data_provider {
 
     /**
-     * Get the language string identifier with the component's language
-     * file to explain why this plugin stores no data.
+     * Returns meta data about this system.
      *
-     * @return  string
+     * @param   collection $collection The initialised collection to add items to.
+     * @return  collection A listing of user data stored through this system.
      */
-    public static function get_reason(): string {
-        return 'privacy:metadata';
+    public static function get_metadata(collection $collection): collection {
+        // Data collected by the client.
+
+        $externalfields = [
+            'id' => 'privacy:metadata:id',
+            'username' => 'privacy:metadata:username',
+
+        ];
+
+        $collection->add_external_location_link('leeloo_userkeys_client', $externalfields, 'privacy:metadata:leeloo_userkeys');
+
+        return $collection;
     }
 }
