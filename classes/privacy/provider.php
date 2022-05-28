@@ -25,8 +25,6 @@
 
 namespace block_leeloo_userkeys\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Provider implementation for block_leeloo_userkeys.
  *
